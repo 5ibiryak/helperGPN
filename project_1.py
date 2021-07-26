@@ -31,7 +31,7 @@ class Ui_MainWindow(object):
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton.setGeometry(QtCore.QRect(350, 440, 121, 51))
         font = QtGui.QFont()
-        font.setFamily("Rockwell")
+        font.setFamily("Arial")
         font.setPointSize(10)
         self.pushButton.setFont(font)
         self.pushButton.setMouseTracking(True)
@@ -45,7 +45,7 @@ class Ui_MainWindow(object):
         self.textBrowser_object = QtWidgets.QTextBrowser(self.centralwidget)
         self.textBrowser_object.setGeometry(QtCore.QRect(240, 230, 181, 41))
         font = QtGui.QFont()
-        font.setFamily("Rockwell")
+        font.setFamily("Arial")
         font.setPointSize(10)
         self.textBrowser_object.setFont(font)
         self.textBrowser_object.setStyleSheet("QTextBrowser{\n"
@@ -57,7 +57,7 @@ class Ui_MainWindow(object):
         self.textBrowser_data = QtWidgets.QTextBrowser(self.centralwidget)
         self.textBrowser_data.setGeometry(QtCore.QRect(240, 320, 181, 41))
         font = QtGui.QFont()
-        font.setFamily("Rockwell")
+        font.setFamily("Arial")
         font.setPointSize(10)
         self.textBrowser_data.setFont(font)
         self.textBrowser_data.setStyleSheet("QTextBrowser{\n"
@@ -83,7 +83,7 @@ class Ui_MainWindow(object):
         self.textBrowser_folder = QtWidgets.QTextBrowser(self.centralwidget)
         self.textBrowser_folder.setGeometry(QtCore.QRect(240, 50, 181, 41))
         font = QtGui.QFont()
-        font.setFamily("Rockwell")
+        font.setFamily("Arial")
         font.setPointSize(10)
         self.textBrowser_folder.setFont(font)
         self.textBrowser_folder.setStyleSheet("QTextBrowser{\n"
@@ -109,7 +109,7 @@ class Ui_MainWindow(object):
         self.textBrowser_excel = QtWidgets.QTextBrowser(self.centralwidget)
         self.textBrowser_excel.setGeometry(QtCore.QRect(240, 140, 271, 41))
         font = QtGui.QFont()
-        font.setFamily("Rockwell")
+        font.setFamily("Arial")
         font.setPointSize(10)
         self.textBrowser_excel.setFont(font)
         self.textBrowser_excel.setStyleSheet("QTextBrowser{\n"
@@ -149,17 +149,17 @@ class Ui_MainWindow(object):
         self.textBrowser_object.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Rockwell\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:\'Arial\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt;\">Введите объект</span></p></body></html>"))
         self.textBrowser_data.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Rockwell\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:\'Arial\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt;\">Введите дату</span></p></body></html>"))
         self.textBrowser_folder.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Rockwell\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:\'Arial\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt;\">Выберите папку</span></p></body></html>"))
         self.textEdit_excel.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -169,7 +169,7 @@ class Ui_MainWindow(object):
         self.textBrowser_excel.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Rockwell\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:\'Arial\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt;\">Выберите документ excel</span></p></body></html>"))
         self.pushButton_folder.setText(_translate("MainWindow", "..."))
         self.pushButton_excel.setText(_translate("MainWindow", "..."))
