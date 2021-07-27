@@ -1,17 +1,18 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
-from project_1 import Ui_MainWindow
+from project_2 import Ui_MainWindow
 from tkinter import *
 import os
 from openpyxl import load_workbook
  
-root = Tk()
+dirlist = 'D:/CT_BAS'
 myFileName = "list_of_flights.xlsx"
 
 def btn_click():
     name = ui.textEdit_object.toPlainText()
     date = ui.textEdit_data.toPlainText()
-    os.chdir('D:/CT_BAS')
+    dirlist = ui.plainTextEdit_folder.toPlainText()
+    os.chdir(dirlist)
     #создание главной папки
     os.mkdir(name + '_' + date)
     os.chdir(name + '_' + date)
@@ -31,7 +32,7 @@ def btn_click():
     print('Hello')
     
     # добавление записи о полете в таблицу
-    os.chdir('D:/CT_BAS')
+    os.chdir(dirlist)
     wb = load_workbook(myFileName)
     ws = wb.worksheets[0]
     name = name+''
@@ -45,6 +46,18 @@ def btn_click():
     #завершение работы с таблицой
     wb.save(filename=myFileName)
     wb.close()
+    
+#выбор папки
+def getDirectory():
+    dirlist = QtWidgets.QFileDialog.getExistingDirectory()
+    ui.plainTextEdit_folder.setPlainText(format(dirlist))
+    ui.plainTextEdit_folder.setGeometry(QtCore.QRect(240, 90, 321, 46))
+
+#выбор файла
+def getFileName():
+        filename = QtWidgets.QFileDialog.getOpenFileName()
+        ui.plainTextEdit_excel.appendHtml(format(filename))
+        ui.plainTextEdit_excel.setGeometry(QtCore.QRect(240, 180, 321, 46))
 
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()
@@ -52,6 +65,10 @@ ui = Ui_MainWindow()
 ui.setupUi(MainWindow)
 MainWindow.show()
 
+ui.plainTextEdit_folder.appendHtml(format(dirlist))
+
+ui.pushButton_folder.clicked.connect(getDirectory)
+ui.pushButton_excel.clicked.connect(getFileName)
 ui.pushButton.clicked.connect(btn_click)
 
 sys.exit(app.exec_())
