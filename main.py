@@ -5,7 +5,7 @@ from tkinter import *
 import os
 from openpyxl import load_workbook
  
-dirlist = 'D:/CT_BAS'
+dirlist = 'D:/'
 myFileName = "list_of_flights.xlsx"
 
 def btn_click():
