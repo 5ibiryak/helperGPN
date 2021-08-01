@@ -1,16 +1,17 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
-from project_2 import Ui_MainWindow
+from project_4 import Ui_MainWindow
 from tkinter import *
 import os
 from openpyxl import load_workbook
+import pandas as pd
  
 dirlist = 'D:/'
-myFileName = "list_of_flights.xlsx"
+myFileName = ""
 
 def btn_click():
     name = ui.textEdit_object.toPlainText()
-    date = ui.textEdit_data.toPlainText()
+    date = ui.dateEdit.dateTime().toString('dd.MM.yyyy')
     dirlist = ui.plainTextEdit_folder.toPlainText()
     os.chdir(dirlist)
     #создание главной папки
@@ -20,33 +21,67 @@ def btn_click():
     os.mkdir("Field")
     os.mkdir("P4D_processing")
     os.mkdir('Results' + '_' + name + '_' + date)
-    #создание папок в P4D_processing
-    os.chdir('P4D_processing')
-    os.mkdir(name + '_' + date)
     #создание папок в Results
-    os.chdir("..")
     os.chdir('Results' + '_' + name + '_' + date)
     os.mkdir('DEM')
     os.mkdir('Ortho')
     os.mkdir('Point_cloud')
-    print('Hello')
+    print('Okey')
     
-    # добавление записи о полете в таблицу
-    os.chdir(dirlist)
+    # # добавление записи о полете в таблицу
+    # os.chdir(dirlist)
+    # wb = load_workbook(myFileName)
+    # ws = wb.worksheets[0]
+    # name = name+''
+    # date = date+''
+    # # проверка не пуста ли переменная имя
+    # if name:
+    #     newItemID = ws.max_row
+    #     ws.append([newItemID, name, date])
+    # else:
+    #     print('No name entered')
+    # #завершение работы с таблицой
+    # wb.save(filename=myFileName)
+    # wb.close()
+    
+# Работа с таблицей
+    global myFileName
+    arr = myFileName.split("/")
+    filedir=""
+    i = 0
+    while i < (len(arr)-1):
+        filedir = filedir + arr[i] +'/'
+        i = i+1
+    myFileName = arr[len(arr)-1]
+    
+    os.chdir(filedir)
     wb = load_workbook(myFileName)
+    
+    #проверка сушествует ли таблица в выбранном файле
+    df = pd.read_excel(myFileName)
+    check = df.empty
+    # создание таблицы, если ее нет
+    if (check):
+        ws = wb.worksheets[0]
+        ws.append(['Порядковый номер', 'Наименование объекта','Наименование проекта', 'Дата съемки'])
+    
+    # добавление записи в таблицу
     ws = wb.worksheets[0]
     name = name+''
     date = date+''
+    project_name = name+'_'+date
     # проверка не пуста ли переменная имя
     if name:
         newItemID = ws.max_row
-        ws.append([newItemID, name, date])
+        ws.append([newItemID, name,project_name, date])
     else:
         print('No name entered')
     #завершение работы с таблицой
     wb.save(filename=myFileName)
     wb.close()
-    
+
+
+
 #выбор папки
 def getDirectory():
     dirlist = QtWidgets.QFileDialog.getExistingDirectory()
