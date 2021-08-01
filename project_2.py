@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'project_2.ui'
+# Form implementation generated from reading ui file 'project_4.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.resize(802, 700)
         MainWindow.setStyleSheet("")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setStyleSheet("QWidget{\n"
@@ -29,7 +29,7 @@ class Ui_MainWindow(object):
 "}")
         self.centralwidget.setObjectName("centralwidget")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(350, 440, 121, 51))
+        self.pushButton.setGeometry(QtCore.QRect(350, 570, 121, 51))
         font = QtGui.QFont()
         font.setFamily("Rockwell")
         font.setPointSize(10)
@@ -73,13 +73,6 @@ class Ui_MainWindow(object):
 "    background-color: rgb(255, 255, 255);\n"
 "}")
         self.textEdit_object.setObjectName("textEdit_object")
-        self.textEdit_data = QtWidgets.QTextEdit(self.centralwidget)
-        self.textEdit_data.setGeometry(QtCore.QRect(240, 360, 321, 31))
-        self.textEdit_data.setStyleSheet("QTextEdit{\n"
-"    \n"
-"    background-color: rgb(255, 255, 255);\n"
-"}")
-        self.textEdit_data.setObjectName("textEdit_data")
         self.textBrowser_folder = QtWidgets.QTextBrowser(self.centralwidget)
         self.textBrowser_folder.setGeometry(QtCore.QRect(240, 50, 181, 41))
         font = QtGui.QFont()
@@ -130,9 +123,46 @@ class Ui_MainWindow(object):
 "    background-color: rgb(255, 255, 255);\n"
 "}")
         self.plainTextEdit_excel.setObjectName("plainTextEdit_excel")
+        self.checkBox = QtWidgets.QCheckBox(self.centralwidget)
+        self.checkBox.setGeometry(QtCore.QRect(240, 510, 121, 21))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        self.checkBox.setFont(font)
+        self.checkBox.setStyleSheet("QCheckBox{\n"
+"    \n"
+"    color: rgb(255, 255, 255);\n"
+"}")
+        self.checkBox.setObjectName("checkBox")
+        self.textBrowser_data_2 = QtWidgets.QTextBrowser(self.centralwidget)
+        self.textBrowser_data_2.setGeometry(QtCore.QRect(240, 410, 241, 41))
+        font = QtGui.QFont()
+        font.setFamily("Rockwell")
+        font.setPointSize(10)
+        self.textBrowser_data_2.setFont(font)
+        self.textBrowser_data_2.setStyleSheet("QTextBrowser{\n"
+"    \n"
+"    color: rgb(255, 255, 255);\n"
+"    border: 0px\n"
+"}")
+        self.textBrowser_data_2.setObjectName("textBrowser_data_2")
+        self.comboBox = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBox.setGeometry(QtCore.QRect(240, 450, 321, 31))
+        self.comboBox.setStyleSheet("QComboBox{\n"
+"    \n"
+"    background-color: rgb(255, 255, 255);\n"
+"}")
+        self.comboBox.setObjectName("comboBox")
+        self.dateEdit = QtWidgets.QDateEdit(self.centralwidget)
+        self.dateEdit.setGeometry(QtCore.QRect(240, 360, 321, 31))
+        self.dateEdit.setStyleSheet("QDateEdit{\n"
+"    \n"
+"    background-color: rgb(255, 255, 255);\n"
+"}")
+        self.dateEdit.setObjectName("dateEdit")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 802, 26))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -168,5 +198,19 @@ class Ui_MainWindow(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt;\">Выберите документ excel</span></p></body></html>"))
         self.pushButton_folder.setText(_translate("MainWindow", "..."))
         self.pushButton_excel.setText(_translate("MainWindow", "..."))
+        self.checkBox.setText(_translate("MainWindow", "Добавить id"))
+        self.textBrowser_data_2.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Rockwell\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt;\">Выберите программу</span></p></body></html>"))
 
 
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
