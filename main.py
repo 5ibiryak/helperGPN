@@ -20,6 +20,12 @@ def btn_click():
     #создание подпапок в главной
     os.mkdir("Field")
     use_program = ui.comboBox.currentText()
+    if use_program == "Agisoft Metashape":
+        use_program = "MS_processing"
+    elif use_program == "Contex capture":
+        use_program = "CC_processing"
+    elif use_program == "Pix4D":
+        use_program = "P4D_processing"
     os.mkdir(use_program)
     os.mkdir('Results' + '_' + name + '_' + date)
     #создание папок в Results
