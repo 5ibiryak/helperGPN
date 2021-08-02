@@ -19,7 +19,8 @@ def btn_click():
     os.chdir(name + '_' + date)
     #создание подпапок в главной
     os.mkdir("Field")
-    os.mkdir("P4D_processing")
+    use_program = ui.comboBox.currentText()
+    os.mkdir(use_program)
     os.mkdir('Results' + '_' + name + '_' + date)
     #создание папок в Results
     os.chdir('Results' + '_' + name + '_' + date)
