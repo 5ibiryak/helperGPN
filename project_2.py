@@ -153,6 +153,7 @@ class Ui_MainWindow(object):
 "    background-color: rgb(255, 255, 255);\n"
 "}")
         self.comboBox.setObjectName("comboBox")
+        self.comboBox.addItems(["Agisoft Metashape","Contex capture","Pix4D"])
         self.dateEdit = QtWidgets.QDateEdit(self.centralwidget)
         self.dateEdit.setGeometry(QtCore.QRect(240, 360, 321, 31))
         self.dateEdit.setStyleSheet("QDateEdit{\n"
