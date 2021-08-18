@@ -1,6 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMessageBox
 import sys
-from project_2 import Ui_MainWindow
+from project_1 import Ui_MainWindow
 from tkinter import *
 import os
 from openpyxl import load_workbook
@@ -8,87 +9,121 @@ import pandas as pd
  
 dirlist = 'D:/'
 myFileName = ""
+myLogText = "" # строка для логов
+projID = 0 # id проекта в таблице
+
 
 def btn_click():
+    
+    # СЧИТЫВАНИЕ ДАННЫХ
     name = ui.textEdit_object.toPlainText()
     date = ui.dateEdit.dateTime().toString('dd.MM.yyyy')
     dirlist = ui.plainTextEdit_folder.toPlainText()
     os.chdir(dirlist)
-    #создание главной папки
-    os.mkdir(name + '_' + date)
-    os.chdir(name + '_' + date)
-    #создание подпапок в главной
-    os.mkdir("Field")
-    use_program = ui.comboBox.currentText()
-    if use_program == "Agisoft Metashape":
-        use_program = "MS_processing"
-    elif use_program == "Contex capture":
-        use_program = "CC_processing"
-    elif use_program == "Pix4D":
-        use_program = "P4D_processing"
-    os.mkdir(use_program)
-    os.mkdir('Results' + '_' + name + '_' + date)
-    #создание папок в Results
-    os.chdir('Results' + '_' + name + '_' + date)
-    os.mkdir('DEM')
-    os.mkdir('Ortho')
-    os.mkdir('Point_cloud')
-    print('Okey')
     
-    # # добавление записи о полете в таблицу
-    # os.chdir(dirlist)
-    # wb = load_workbook(myFileName)
-    # ws = wb.worksheets[0]
-    # name = name+''
-    # date = date+''
-    # # проверка не пуста ли переменная имя
-    # if name:
-    #     newItemID = ws.max_row
-    #     ws.append([newItemID, name, date])
-    # else:
-    #     print('No name entered')
-    # #завершение работы с таблицой
-    # wb.save(filename=myFileName)
-    # wb.close()
     
-# Работа с таблицей
-    global myFileName
-    arr = myFileName.split("/")
-    filedir=""
-    i = 0
-    while i < (len(arr)-1):
-        filedir = filedir + arr[i] +'/'
-        i = i+1
-    myFileName = arr[len(arr)-1]
-    
-    os.chdir(filedir)
-    wb = load_workbook(myFileName)
-    
-    #проверка сушествует ли таблица в выбранном файле
-    df = pd.read_excel(myFileName)
-    check = df.empty
-    # создание таблицы, если ее нет
-    if (check):
-        ws = wb.worksheets[0]
-        ws.append(['Порядковый номер', 'Наименование объекта','Наименование проекта', 'Дата съемки'])
-    
-    # добавление записи в таблицу
-    ws = wb.worksheets[0]
-    name = name+''
-    date = date+''
-    project_name = name+'_'+date
-    # проверка не пуста ли переменная имя
-    if name:
-        newItemID = ws.max_row
-        ws.append([newItemID, name,project_name, date])
+    # проверка что имя введено
+    if not name:
+        myLogText = 'Введите имя проекта'
+        showErrMsg(myLogText)
     else:
-        print('No name entered')
-    #завершение работы с таблицой
-    wb.save(filename=myFileName)
-    wb.close()
-
-
-
+        # РАБОТА С ТАБЛИЦЕЙ
+        global myFileName
+        arr = myFileName.split("/")
+        i = 0
+        filedir = ""
+        while i < (len(arr)-1):
+            filedir = filedir + arr[i] +'/'
+            i = i+1
+        print(myFileName,filedir)
+        filename = arr[len(arr)-1]
+        os.chdir(filedir)
+        
+        # проверка закрыт ли файл с таблицей
+        try:
+            myfile = open(filename, "r+")
+        except IOError:
+            myLogText = f'Файл {filename} открыт. Для продолжения закройте файл и нажмите кнопку "Создать" еще раз.'
+            showErrMsg(myLogText)
+        else:    
+            wb = load_workbook(filename)
+            #проверка сушествует ли таблица в выбранном файле
+            df = pd.read_excel(filename)
+            check = df.empty
+            # создание таблицы, если ее нет
+            if (check):
+                ws = wb.worksheets[0]
+                ws.append(['Порядковый номер', 'Наименование объекта','Наименование проекта', 'Дата съемки'])
+                myLogText = 'Новая таблица успешно создана в файле '+filename
+                showInfoMsg(myLogText)
+                        
+            ws = wb.worksheets[0]
+            name = name+''
+            date = date+''
+            newItemID = ws.max_row
+            
+             
+            # проверка параметра чекбокса (добавлять id к наименованию проекта - true или нет - false)
+            if ui.checkBox.isChecked():
+                if newItemID == 1:
+                    projID = 1
+                else:
+                    # получаем порядковый номер последнего проекта в таблице
+                    found = False
+                    while not found:
+                        mstring = f'A{newItemID}'
+                        projID = ws[mstring].value
+                        if projID == None:
+                            newItemID = newItemID - 1
+                        else:
+                            found = True
+                    mstring = f'A{newItemID}'
+                    projID = ws[mstring].value + 1
+                project_name = str(projID)+'_'+name+'_'+date
+            else:
+                project_name = name+'_'+date
+            
+            # проверка что заданной директории не существует
+            if os.path.isdir(project_name):
+                myLogText = 'Папка с заданным именем уже существует'
+                showErrMsg(myLogText)
+            else:
+                # добавление записи в таблицу
+                if ui.checkBox.isChecked():
+                    ws.append([projID, name,project_name, date])
+                else:
+                    ws.append(['', name,project_name, date])
+                    
+                #завершение работы с таблицeй
+                wb.save(filename=filename)
+                wb.close()
+                myLogText = f'Запись о проекте {project_name} успешно добавлена в таблицу'
+                showInfoMsg(myLogText)
+                    
+                # СОЗДАНИЕ ПАПОК
+                #создание главной папки
+                os.mkdir(project_name)
+                os.chdir(project_name)
+                #создание подпапок в главной
+                os.mkdir("Field")
+                use_program = ui.comboBox.currentText()
+                if use_program == "Agisoft Metashape":
+                    use_program = "MS_processing"
+                elif use_program == "Contex capture":
+                    use_program = "CC_processing"
+                elif use_program == "Pix4D":
+                    use_program = "P4D_processing"
+                os.mkdir(use_program)
+                os.mkdir('Results' + '_' + name + '_' + date)
+                #создание папок в Results
+                os.chdir('Results' + '_' + name + '_' + date)
+                os.mkdir('DEM')
+                os.mkdir('Ortho')
+                os.mkdir('Point_cloud')
+                print('Okey')
+                myLogText = f'Система хранения для проекта {project_name} успешно создана'
+                showInfoMsg(myLogText)
+ 
 #выбор папки
 def getDirectory():
     dirlist = QtWidgets.QFileDialog.getExistingDirectory()
@@ -97,12 +132,35 @@ def getDirectory():
 
 #выбор файла
 def getFileName():
-        filename = QtWidgets.QFileDialog.getOpenFileName()
+        filename,_ = QtWidgets.QFileDialog.getOpenFileName()
+        global myFileName
+        myFileName = filename
         ui.plainTextEdit_excel.appendHtml(format(filename))
         ui.plainTextEdit_excel.setGeometry(QtCore.QRect(240, 180, 321, 46))
 
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()
+
+# создание окошка для сообшений об ошибках
+err_msg = QMessageBox()
+err_msg.setIcon(QMessageBox.Critical)
+err_msg.setInformativeText('')
+err_msg.setWindowTitle("Ошибка")
+
+def showErrMsg(mstring):
+    err_msg.setInformativeText(mstring)
+    err_msg.exec_()
+
+# создание окошка для инфо-сообщений
+info_msg = QMessageBox()
+info_msg.setIcon(QMessageBox.Information)
+info_msg.setInformativeText('')
+info_msg.setWindowTitle("Ход работы")
+
+def showInfoMsg(mstring):
+    info_msg.setInformativeText(mstring)
+    info_msg.exec_()
+
 ui = Ui_MainWindow()
 ui.setupUi(MainWindow)
 MainWindow.show()
