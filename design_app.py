@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'project_4.ui'
+# Form implementation generated from reading ui file 'project_5.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -14,8 +14,10 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(802, 700)
+        MainWindow.resize(803, 733)
         MainWindow.setStyleSheet("")
+        MainWindow.setAnimated(True)
+        MainWindow.setDockNestingEnabled(False)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setStyleSheet("QWidget{\n"
 "    \n"
@@ -43,7 +45,7 @@ class Ui_MainWindow(object):
         self.pushButton.setAutoRepeat(False)
         self.pushButton.setObjectName("pushButton")
         self.textBrowser_object = QtWidgets.QTextBrowser(self.centralwidget)
-        self.textBrowser_object.setGeometry(QtCore.QRect(240, 230, 400, 41))
+        self.textBrowser_object.setGeometry(QtCore.QRect(240, 230, 181, 41))
         font = QtGui.QFont()
         font.setFamily("Rockwell")
         font.setPointSize(10)
@@ -71,6 +73,7 @@ class Ui_MainWindow(object):
         self.textEdit_object.setStyleSheet("QTextEdit{\n"
 "    \n"
 "    background-color: rgb(255, 255, 255);\n"
+"    border-radius: 10px;\n"
 "}")
         self.textEdit_object.setObjectName("textEdit_object")
         self.textBrowser_folder = QtWidgets.QTextBrowser(self.centralwidget)
@@ -101,12 +104,14 @@ class Ui_MainWindow(object):
         self.pushButton_folder.setGeometry(QtCore.QRect(580, 90, 31, 31))
         self.pushButton_folder.setStyleSheet("QPushButton{\n"
 "    background-color: rgb(79, 158, 218);\n"
+"    border-radius: 10px;\n"
 "}")
         self.pushButton_folder.setObjectName("pushButton_folder")
         self.pushButton_excel = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_excel.setGeometry(QtCore.QRect(580, 180, 31, 31))
         self.pushButton_excel.setStyleSheet("QPushButton{\n"
 "    background-color: rgb(79, 158, 218);\n"
+"    border-radius: 10px;\n"
 "}")
         self.pushButton_excel.setObjectName("pushButton_excel")
         self.plainTextEdit_folder = QtWidgets.QPlainTextEdit(self.centralwidget)
@@ -114,6 +119,7 @@ class Ui_MainWindow(object):
         self.plainTextEdit_folder.setStyleSheet("QPlainTextEdit{\n"
 "    \n"
 "    background-color: rgb(255, 255, 255);\n"
+"    border-radius: 10px;\n"
 "}")
         self.plainTextEdit_folder.setObjectName("plainTextEdit_folder")
         self.plainTextEdit_excel = QtWidgets.QPlainTextEdit(self.centralwidget)
@@ -121,10 +127,11 @@ class Ui_MainWindow(object):
         self.plainTextEdit_excel.setStyleSheet("QPlainTextEdit{\n"
 "    \n"
 "    background-color: rgb(255, 255, 255);\n"
+"    border-radius: 10px;\n"
 "}")
         self.plainTextEdit_excel.setObjectName("plainTextEdit_excel")
         self.checkBox = QtWidgets.QCheckBox(self.centralwidget)
-        self.checkBox.setGeometry(QtCore.QRect(240, 510, 250, 21))
+        self.checkBox.setGeometry(QtCore.QRect(240, 510, 121, 21))
         font = QtGui.QFont()
         font.setFamily("Arial")
         font.setPointSize(10)
@@ -148,27 +155,63 @@ class Ui_MainWindow(object):
         self.textBrowser_data_2.setObjectName("textBrowser_data_2")
         self.comboBox = QtWidgets.QComboBox(self.centralwidget)
         self.comboBox.setGeometry(QtCore.QRect(240, 450, 321, 31))
+        self.comboBox.setAutoFillBackground(True)
         self.comboBox.setStyleSheet("QComboBox{\n"
 "    \n"
 "    background-color: rgb(255, 255, 255);\n"
+"    border-radius: 10px;\n"
+"}\n"
+"\n"
+"QComboBox::down-button{\n"
+"    background-color: rgb(255, 255, 0);\n"
 "}")
+        self.comboBox.setEditable(False)
+        self.comboBox.setCurrentText("")
         self.comboBox.setObjectName("comboBox")
-        self.comboBox.addItems(["Agisoft Metashape","Contex capture","Pix4D"])
         self.dateEdit = QtWidgets.QDateEdit(self.centralwidget)
         self.dateEdit.setGeometry(QtCore.QRect(240, 360, 321, 31))
         self.dateEdit.setStyleSheet("QDateEdit{\n"
 "    \n"
 "    background-color: rgb(255, 255, 255);\n"
+"    border-radius: 10px;\n"
+"}\n"
+"\n"
+"QDateEdit::down-button{\n"
+"\n"
+"    \n"
+"}\n"
+"\n"
+"QDateEdit::up-button{\n"
+"    \n"
+"\n"
 "}")
+        self.dateEdit.setWrapping(False)
+        self.dateEdit.setFrame(True)
+        self.dateEdit.setAlignment(QtCore.Qt.AlignCenter)
+        self.dateEdit.setReadOnly(False)
+        self.dateEdit.setButtonSymbols(QtWidgets.QAbstractSpinBox.UpDownArrows)
+        self.dateEdit.setSpecialValueText("")
+        self.dateEdit.setAccelerated(False)
+        self.dateEdit.setKeyboardTracking(True)
+        self.dateEdit.setProperty("showGroupSeparator", False)
         self.dateEdit.setObjectName("dateEdit")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 802, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 803, 26))
         self.menubar.setObjectName("menubar")
+        self.menuFile = QtWidgets.QMenu(self.menubar)
+        self.menuFile.setObjectName("menuFile")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
+        self.actionSettings = QtWidgets.QAction(MainWindow)
+        self.actionSettings.setObjectName("actionSettings")
+        self.actionInfromation = QtWidgets.QAction(MainWindow)
+        self.actionInfromation.setObjectName("actionInfromation")
+        self.menuFile.addAction(self.actionSettings)
+        self.menuFile.addAction(self.actionInfromation)
+        self.menubar.addAction(self.menuFile.menuAction())
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -181,7 +224,7 @@ class Ui_MainWindow(object):
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Rockwell\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt;\">Введите наименование объекта</span></p></body></html>"))
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt;\">Введите объект</span></p></body></html>"))
         self.textBrowser_data.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -199,19 +242,12 @@ class Ui_MainWindow(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt;\">Выберите документ excel</span></p></body></html>"))
         self.pushButton_folder.setText(_translate("MainWindow", "..."))
         self.pushButton_excel.setText(_translate("MainWindow", "..."))
-        self.checkBox.setText(_translate("MainWindow", "Добавить порядковый номер"))
+        self.checkBox.setText(_translate("MainWindow", "Добавить id"))
         self.textBrowser_data_2.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Rockwell\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt;\">Выберите программу</span></p></body></html>"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())
+        self.menuFile.setTitle(_translate("MainWindow", "File"))
+        self.actionSettings.setText(_translate("MainWindow", "Settings"))
+        self.actionInfromation.setText(_translate("MainWindow", "Infromation"))
