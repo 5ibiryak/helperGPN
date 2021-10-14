@@ -1,16 +1,18 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 import sys
-from design_app import Ui_MainWindow
+from design_app import *
 from tkinter import *
 import os
 from openpyxl import load_workbook
 import pandas as pd
-import metashape
- 
+
+
+
+
 dirlist = 'D:/'
 myFileName = ""
-myLogText = "" # строка для логов
+myLogText = "" # строка для логов5
 projID = 0 # id проекта в таблице
 path_Metashape = 'C:\Program Files\Agisoft\Metashape Pro\metashape.exe'
 
@@ -144,7 +146,8 @@ def window_for_open_app ():
         print('OK clicked')
         try:           
             os.startfile(path_Metashape)
-            metashape.Task.RunScript.path('C:/Users/ezdor/Desktop/ГПН/helper+plug/main_plug.py')
+            #не работает откртыие плагина
+            #metashape.Task.RunScript.path('C:/Users/ezdor/Desktop/ГПН/helper+plug/main_plug.py')
         except:
             pass
     else:
@@ -158,11 +161,11 @@ def getDirectory():
 
 #выбор файла
 def getFileName():
-        filename,_ = QtWidgets.QFileDialog.getOpenFileName()
-        global myFileName
-        myFileName = filename
-        ui.plainTextEdit_excel.appendHtml(format(filename))
-        ui.plainTextEdit_excel.setGeometry(QtCore.QRect(240, 180, 321, 46))
+    filename,_ = QtWidgets.QFileDialog.getOpenFileName()
+    global myFileName
+    myFileName = filename
+    ui.plainTextEdit_excel.appendHtml(format(filename))
+    ui.plainTextEdit_excel.setGeometry(QtCore.QRect(240, 180, 321, 46))
 
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()
@@ -187,6 +190,9 @@ def showInfoMsg(mstring):
     info_msg.setInformativeText(mstring)
     info_msg.exec_()
 
+
+
+###########запуск приложения##############
 ui = Ui_MainWindow()
 ui.setupUi(MainWindow)
 MainWindow.show()
@@ -196,5 +202,6 @@ ui.plainTextEdit_folder.appendHtml(format(dirlist))
 ui.pushButton_folder.clicked.connect(getDirectory)
 ui.pushButton_excel.clicked.connect(getFileName)
 ui.pushButton.clicked.connect(btn_click)
+
 
 sys.exit(app.exec_())
