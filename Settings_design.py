@@ -33,7 +33,7 @@ class Ui_Settings(object):
 "}")
         self.centralwidget.setObjectName("centralwidget")
         self.plainTextEdit_folder = QtWidgets.QPlainTextEdit(self.centralwidget)
-        self.plainTextEdit_folder.setGeometry(QtCore.QRect(120, 90, 321, 31))
+        self.plainTextEdit_folder.setGeometry(QtCore.QRect(120, 90, 321, 46))
         self.plainTextEdit_folder.setStyleSheet("QPlainTextEdit{\n"
 "    \n"
 "    background-color: rgb(255, 255, 255);\n"
@@ -69,7 +69,7 @@ class Ui_Settings(object):
         self.textBrowser_folder_2.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.textBrowser_folder_2.setObjectName("textBrowser_folder_2")
         self.plainTextEdit_folder_2 = QtWidgets.QPlainTextEdit(self.centralwidget)
-        self.plainTextEdit_folder_2.setGeometry(QtCore.QRect(120, 190, 321, 31))
+        self.plainTextEdit_folder_2.setGeometry(QtCore.QRect(120, 190, 321, 46))
         self.plainTextEdit_folder_2.setStyleSheet("QPlainTextEdit{\n"
 "    \n"
 "    background-color: rgb(255, 255, 255);\n"
@@ -77,7 +77,7 @@ class Ui_Settings(object):
 "}")
         self.plainTextEdit_folder_2.setObjectName("plainTextEdit_folder_2")
         self.plainTextEdit_folder_3 = QtWidgets.QPlainTextEdit(self.centralwidget)
-        self.plainTextEdit_folder_3.setGeometry(QtCore.QRect(120, 290, 321, 31))
+        self.plainTextEdit_folder_3.setGeometry(QtCore.QRect(120, 290, 321, 46))
         self.plainTextEdit_folder_3.setStyleSheet("QPlainTextEdit{\n"
 "    \n"
 "    background-color: rgb(255, 255, 255);\n"
