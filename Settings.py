@@ -5,8 +5,10 @@ import sys
 ### имена должны отображаться в окне
 
 
-myFileName = ""
-dirlist=' d'
+myFileName_1 = "\n"
+myFileName_2 = "\n"
+myFileName_3 = "\n"
+
 
 
 ### вывод занесенных значений
@@ -64,11 +66,33 @@ def getFileName_3():
 
 
 def save():
+    st_1=string_1()
+    st_2 = string_2()
+    st_3 = string_3()
     try:
         with open("path.txt", "w",encoding="utf8") as file:
-            file.write(myFileName_1+'\n')
-            file.write(myFileName_2+'\n')
-            file.write(myFileName_3)
+            if myFileName_1=='\n' and not st_1:
+                file.write("\n")
+            elif myFileName_1=='\n' and st_1:
+                file.write(st_1)
+            else:
+                file.write(myFileName_1+'\n')
+
+
+            if myFileName_2=='\n' and not st_2:
+                file.write("\n")
+            elif myFileName_2=='\n' and st_2:
+                file.write(st_2)
+            else:
+                file.write(myFileName_2+'\n')
+
+
+            if myFileName_3 == '\n':
+                file.write("ha")
+            elif myFileName_3=='\n' and st_3:
+                file.write(st_3)
+            else:
+                file.write(myFileName_3)
     except:
         pass
         

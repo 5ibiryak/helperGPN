@@ -1,3 +1,2 @@
-C:/Users/ezdor/Desktop/ГПН/helperGPN/design_app.py
-C:/Users/ezdor/Desktop/ГПН/helperGPN/main_app.py
-C:/Users/ezdor/Desktop/ГПН/helperGPN/main_app.py
+/run/user/1000/doc/acf5bdfb/arduino-arduinoide.desktop
+/run/user/1000/doc/1092a14e/project_2.py
