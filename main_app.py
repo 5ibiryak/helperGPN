@@ -19,11 +19,13 @@ projID = 0 # id проекта в таблице
 ### путь для приложений
 with open('path.txt',"r") as myfile:
   data = myfile.readlines()
-print(data[0])
 
-path_Metashape = data[0]
-path_ContexCapture = data[1]
-path_Pix4D = data[2]
+str1=data[0]
+str2=data[1]
+str3=data[2]
+path_Metashape = str1[:-1]
+path_ContexCapture = str2[:-1]
+path_Pix4D = str3[:-1]
 
 
 def btn_click():
@@ -155,8 +157,6 @@ def window_for_open_app ():
         print('OK clicked')
         try:           
             os.startfile(path_Metashape)
-            #не работает откртыие плагина
-            #metashape.Task.RunScript.path('C:/Users/ezdor/Desktop/ГПН/helper+plug/main_plug.py')
         except:
             pass
     else:

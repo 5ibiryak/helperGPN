@@ -1,1 +1,3 @@
-C:\Program Files\Agisoft\Metashape Pro\metashape.exe
+C:/Program Files/Agisoft/Metashape Pro/metashape.exe
+C:/Users/Desktop/helperGPN/main_app.py
+C:/Users/Desktop/helperGPN/Settings_design.py
