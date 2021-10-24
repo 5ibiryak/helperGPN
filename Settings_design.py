@@ -21,7 +21,7 @@ class Ui_Settings(object):
         self.centralwidget = QtWidgets.QWidget(Settings)
         self.centralwidget.setStyleSheet("QWidget{\n"
 "    \n"
-"    background-color: rgb(57, 131, 177);\n"
+"    background-color: rgb(0,151,216);\n"
 "    \n"
 "}\n"
 "\n"
@@ -43,7 +43,7 @@ class Ui_Settings(object):
         self.textBrowser_folder = QtWidgets.QTextBrowser(self.centralwidget)
         self.textBrowser_folder.setGeometry(QtCore.QRect(120, 40, 251, 21))
         font = QtGui.QFont()
-        font.setFamily("Rockwell")
+        font.setFamily("Arial")
         font.setPointSize(10)
         self.textBrowser_folder.setFont(font)
         self.textBrowser_folder.setStyleSheet("QTextBrowser{\n"
@@ -57,7 +57,7 @@ class Ui_Settings(object):
         self.textBrowser_folder_2 = QtWidgets.QTextBrowser(self.centralwidget)
         self.textBrowser_folder_2.setGeometry(QtCore.QRect(120, 140, 261, 21))
         font = QtGui.QFont()
-        font.setFamily("Rockwell")
+        font.setFamily("Arial")
         font.setPointSize(10)
         self.textBrowser_folder_2.setFont(font)
         self.textBrowser_folder_2.setStyleSheet("QTextBrowser{\n"
@@ -87,7 +87,7 @@ class Ui_Settings(object):
         self.textBrowser_folder_3 = QtWidgets.QTextBrowser(self.centralwidget)
         self.textBrowser_folder_3.setGeometry(QtCore.QRect(120, 240, 261, 21))
         font = QtGui.QFont()
-        font.setFamily("Rockwell")
+        font.setFamily("Arial")
         font.setPointSize(10)
         self.textBrowser_folder_3.setFont(font)
         self.textBrowser_folder_3.setStyleSheet("QTextBrowser{\n"
@@ -101,14 +101,14 @@ class Ui_Settings(object):
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton.setGeometry(QtCore.QRect(210, 350, 121, 51))
         font = QtGui.QFont()
-        font.setFamily("Rockwell")
+        font.setFamily("Arial")
         font.setPointSize(10)
         self.pushButton.setFont(font)
         self.pushButton.setMouseTracking(True)
         self.pushButton.setAutoFillBackground(False)
         self.pushButton.setStyleSheet("QPushButton{\n"
 "    \n"
-"    background-color: rgb(79, 158, 218);\n"
+"    background-color: rgb(0,112,186);\n"
 "    border-radius: 5px;\n"
 "}")
         self.pushButton.setAutoRepeat(False)
@@ -116,21 +116,21 @@ class Ui_Settings(object):
         self.pushButton_folder = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_folder.setGeometry(QtCore.QRect(460, 90, 31, 31))
         self.pushButton_folder.setStyleSheet("QPushButton{\n"
-"    background-color: rgb(79, 158, 218);\n"
+"    background-color: rgb(0,112,186);\n"
 "    border-radius: 10px;\n"
 "}")
         self.pushButton_folder.setObjectName("pushButton_folder")
         self.pushButton_folder_2 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_folder_2.setGeometry(QtCore.QRect(460, 190, 31, 31))
         self.pushButton_folder_2.setStyleSheet("QPushButton{\n"
-"    background-color: rgb(79, 158, 218);\n"
+"    background-color: rgb(0,112,186);\n"
 "    border-radius: 10px;\n"
 "}")
         self.pushButton_folder_2.setObjectName("pushButton_folder_2")
         self.pushButton_folder_3 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_folder_3.setGeometry(QtCore.QRect(460, 290, 31, 31))
         self.pushButton_folder_3.setStyleSheet("QPushButton{\n"
-"    background-color: rgb(79, 158, 218);\n"
+"    background-color: rgb(0,112,186);\n"
 "    border-radius: 10px;\n"
 "}")
         self.pushButton_folder_3.setObjectName("pushButton_folder_3")
@@ -152,17 +152,17 @@ class Ui_Settings(object):
         self.textBrowser_folder.setHtml(_translate("Settings", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Rockwell\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:\'Arial\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Расположение  Agisoft MS</p></body></html>"))
         self.textBrowser_folder_2.setHtml(_translate("Settings", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Rockwell\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:\'Arial\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Расположение  Contex Capture</p></body></html>"))
         self.textBrowser_folder_3.setHtml(_translate("Settings", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Rockwell\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:\'Arial\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Расположение  Pix4D</p></body></html>"))
         self.pushButton.setText(_translate("Settings", "Сохранить"))
         self.pushButton_folder.setText(_translate("Settings", "..."))

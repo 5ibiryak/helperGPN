@@ -11,16 +11,11 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 import Settings_design
-import sys
+
 
 from random import randint
 from PyQt5.QtWidgets import (
-    QApplication,
-    QLabel,
     QMainWindow,
-    QPushButton,
-    QVBoxLayout,
-    QWidget,
 )
 
 
@@ -34,8 +29,7 @@ class Ui_MainWindow(QMainWindow):
         print('AA')
         self.Settings_window = settings_window()
         self.Settings_window.show()
-        logic=False
-        return logic
+
         
  
      
@@ -48,7 +42,7 @@ class Ui_MainWindow(QMainWindow):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setStyleSheet("QWidget{\n"
 "    \n"
-"    background-color: rgb(57, 131, 177);\n"
+"    background-color: rgb(0,151,216);\n"
 "}\n"
 "\n"
 "QPushButton{\n"
@@ -60,21 +54,21 @@ class Ui_MainWindow(QMainWindow):
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton.setGeometry(QtCore.QRect(350, 570, 121, 51))
         font = QtGui.QFont()
-        font.setFamily("Rockwell")
+        font.setFamily("Arial")
         font.setPointSize(10)
         self.pushButton.setFont(font)
         self.pushButton.setMouseTracking(True)
         self.pushButton.setAutoFillBackground(False)
         self.pushButton.setStyleSheet("QPushButton{\n"
 "    \n"
-"    background-color: rgb(79, 158, 218);\n"
+"    background-color: rgb(0,112,186);\n"
 "}")
         self.pushButton.setAutoRepeat(False)
         self.pushButton.setObjectName("pushButton")
         self.textBrowser_object = QtWidgets.QTextBrowser(self.centralwidget)
         self.textBrowser_object.setGeometry(QtCore.QRect(240, 230, 400, 41))
         font = QtGui.QFont()
-        font.setFamily("Rockwell")
+        font.setFamily("Arial")
         font.setPointSize(10)
         self.textBrowser_object.setFont(font)
         self.textBrowser_object.setStyleSheet("QTextBrowser{\n"
@@ -86,7 +80,7 @@ class Ui_MainWindow(QMainWindow):
         self.textBrowser_data = QtWidgets.QTextBrowser(self.centralwidget)
         self.textBrowser_data.setGeometry(QtCore.QRect(240, 320, 181, 41))
         font = QtGui.QFont()
-        font.setFamily("Rockwell")
+        font.setFamily("Arial")
         font.setPointSize(10)
         self.textBrowser_data.setFont(font)
         self.textBrowser_data.setStyleSheet("QTextBrowser{\n"
@@ -106,7 +100,7 @@ class Ui_MainWindow(QMainWindow):
         self.textBrowser_folder = QtWidgets.QTextBrowser(self.centralwidget)
         self.textBrowser_folder.setGeometry(QtCore.QRect(240, 50, 400, 41))
         font = QtGui.QFont()
-        font.setFamily("Rockwell")
+        font.setFamily("Arial")
         font.setPointSize(10)
         self.textBrowser_folder.setFont(font)
         self.textBrowser_folder.setStyleSheet("QTextBrowser{\n"
@@ -118,7 +112,7 @@ class Ui_MainWindow(QMainWindow):
         self.textBrowser_excel = QtWidgets.QTextBrowser(self.centralwidget)
         self.textBrowser_excel.setGeometry(QtCore.QRect(240, 140, 400, 41))
         font = QtGui.QFont()
-        font.setFamily("Rockwell")
+        font.setFamily("Arial")
         font.setPointSize(10)
         self.textBrowser_excel.setFont(font)
         self.textBrowser_excel.setStyleSheet("QTextBrowser{\n"
@@ -130,14 +124,14 @@ class Ui_MainWindow(QMainWindow):
         self.pushButton_folder = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_folder.setGeometry(QtCore.QRect(580, 90, 31, 31))
         self.pushButton_folder.setStyleSheet("QPushButton{\n"
-"    background-color: rgb(79, 158, 218);\n"
+"    background-color: rgb(0,112,186);\n"
 "    border-radius: 10px;\n"
 "}")
         self.pushButton_folder.setObjectName("pushButton_folder")
         self.pushButton_excel = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_excel.setGeometry(QtCore.QRect(580, 180, 31, 31))
         self.pushButton_excel.setStyleSheet("QPushButton{\n"
-"    background-color: rgb(79, 158, 218);\n"
+"    background-color: rgb(0,112,186);\n"
 "    border-radius: 10px;\n"
 "}")
         self.pushButton_excel.setObjectName("pushButton_excel")
@@ -171,7 +165,7 @@ class Ui_MainWindow(QMainWindow):
         self.textBrowser_data_2 = QtWidgets.QTextBrowser(self.centralwidget)
         self.textBrowser_data_2.setGeometry(QtCore.QRect(240, 410, 241, 41))
         font = QtGui.QFont()
-        font.setFamily("Rockwell")
+        font.setFamily("Arial")
         font.setPointSize(10)
         self.textBrowser_data_2.setFont(font)
         self.textBrowser_data_2.setStyleSheet("QTextBrowser{\n"
@@ -213,13 +207,11 @@ class Ui_MainWindow(QMainWindow):
 "    \n"
 "\n"
 "}")
-
-                
         self.dateEdit.setWrapping(False)
         self.dateEdit.setFrame(True)
         self.dateEdit.setAlignment(QtCore.Qt.AlignCenter)
         self.dateEdit.setReadOnly(False)
-        self.dateEdit.setButtonSymbols(QtWidgets.QAbstractSpinBox.UpDownArrows)
+        self.dateEdit.setButtonSymbols(QtWidgets.QAbstractSpinBox.NoButtons)
         self.dateEdit.setSpecialValueText("")
         self.dateEdit.setAccelerated(False)
         self.dateEdit.setKeyboardTracking(True)
@@ -256,34 +248,34 @@ class Ui_MainWindow(QMainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Helper"))
         self.pushButton.setText(_translate("MainWindow", "Создать"))
-        self.textBrowser_object.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.textBrowser_object.setHtml(_translate("Helper", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Rockwell\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt;\">Введите наименование объекта</span></p></body></html>"))
-        self.textBrowser_data.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"</style></head><body style=\" font-family:\'Arial\'; font-size:10pt; font-weight:600; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt; font-weight:400;\">Введите объект</span></p></body></html>"))
+        self.textBrowser_data.setHtml(_translate("Helper", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Rockwell\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt;\">Введите дату</span></p></body></html>"))
-        self.textBrowser_folder.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"</style></head><body style=\" font-family:\'Arial\'; font-size:10pt; font-weight:600; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt; font-weight:400;\">Введите дату</span></p></body></html>"))
+        self.textBrowser_folder.setHtml(_translate("Helper", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Rockwell\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt;\">Выберите папку</span></p></body></html>"))
-        self.textBrowser_excel.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"</style></head><body style=\" font-family:\'Arial\'; font-size:10pt; font-weight:600; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt; font-weight:400;\">Выберите папку</span></p></body></html>"))
+        self.textBrowser_excel.setHtml(_translate("Helper", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Rockwell\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt;\">Выберите документ excel</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'Arial\'; font-size:10pt; font-weight:600; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt; font-weight:400;\">Выберите документ excel</span></p></body></html>"))
         self.pushButton_folder.setText(_translate("MainWindow", "..."))
         self.pushButton_excel.setText(_translate("MainWindow", "..."))
         self.checkBox.setText(_translate("MainWindow", "Добавить порядковый номер"))
-        self.textBrowser_data_2.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.textBrowser_data_2.setHtml(_translate("Helper", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Rockwell\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt;\">Выберите программу</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'Arial\'; font-size:10pt; font-weight:600; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt; font-weight:400;\">Выберите программу</span></p></body></html>"))
         self.menuFile.setTitle(_translate("MainWindow", "Меню"))
         self.actionSettings.setText(_translate("MainWindow", "Настройки"))
         self.actionInfromation.setText(_translate("MainWindow", "О программе"))
