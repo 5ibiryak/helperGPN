@@ -1,3 +1,0 @@
-C:/Users/ezdor/Desktop/ГПН/helperGPN/design_app.py
-C:/Users/ezdor/Desktop/ГПН/helperGPN/main_app.py
-C:/Users/ezdor/Desktop/ГПН/helperGPN/main_app.py

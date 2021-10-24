@@ -10,7 +10,7 @@ import pandas as pd
 
 
 
-dirlist = 'D:/'
+dirlist = 'C:/'
 myFileName = ""
 myLogText = "" # строка для логов5
 projID = 0 # id проекта в таблице
