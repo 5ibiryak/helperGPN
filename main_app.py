@@ -14,7 +14,16 @@ dirlist = 'C:/'
 myFileName = ""
 myLogText = "" # строка для логов5
 projID = 0 # id проекта в таблице
-path_Metashape = 'C:\Program Files\Agisoft\Metashape Pro\metashape.exe'
+
+
+### путь для приложений
+with open('path.txt',"r") as myfile:
+  data = myfile.readlines()
+print(data[0])
+
+path_Metashape = data[0]
+path_ContexCapture = data[1]
+path_Pix4D = data[2]
 
 
 def btn_click():

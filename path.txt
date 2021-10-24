@@ -1,3 +1,1 @@
-/run/user/1000/doc/acf5bdfb/arduino-arduinoide.desktop
-/run/user/1000/doc/1092a14e/project_2.py
->>>>>>> 48395a0003c946540267c6544614945e60b0d50c
+C:\Program Files\Agisoft\Metashape Pro\metashape.exe
